@@ -21,24 +21,36 @@ public class MathUtility {
 //        return result;
 //    }
 
-
-    //code ham thi phai co kiem thu ham; muom kiem thu phai co test case
+    // chuyen sang tinh giai thua bang de quy
+    /// n! = n * (n - 1)!
     public static long getFactorial(int n) {
         if (n < 0 || n > 20) {
             throw new IllegalArgumentException("Invalid argument. n must be between 0 and 20");
         }
         if (n == 0 || n == 1) {
             return 1;
-        } // early return, thoat som neu co the
-        // khong can viet else cho code nhin dep
-        // n bat dau tu 1...
-        // thuat toan con heo dat, nhan don, cong don
-        long result = 1; // coi n = 2 da xong
-        for (int i = 1; i <= n; i++) {
-            result *= i;// i bij nhan don
         }
-        return result;
+        return n * getFactorial(n - 1);
     }
+
+
+    //code ham thi phai co kiem thu ham; muom kiem thu phai co test case
+//    public static long getFactorial(int n) {
+//        if (n < 0 || n > 20) {
+//            throw new IllegalArgumentException("Invalid argument. n must be between 0 and 20");
+//        }
+//        if (n == 0 || n == 1) {
+//            return 1;
+//        } // early return, thoat som neu co the
+//        // khong can viet else cho code nhin dep
+//        // n bat dau tu 1...
+//        // thuat toan con heo dat, nhan don, cong don
+//        long result = 1; // coi n = 2 da xong
+//        for (int i = 1; i <= n; i++) {
+//            result *= i;// i bij nhan don
+//        }
+//        return result;
+//    }
 
     //Test case #1
     //Verify getfactorial() with n = 0
